@@ -1,0 +1,21 @@
+<a routerLink="/m" class="btn btn-info mt-2">назад</a>
+<div class="row mt-4">
+    <div class="col-12">
+        <small class="text-secondary">{{quest}} , <i style="color:green;">{{quest-loose}}</i> | <i style="color:red;">{{loose}}</i></small>
+    </div>
+    <div class="col-12 " align="center">
+        <!-- изображение знака -->
+        <img [src]="'/uploads/e/'+sign.entity.id+'/prop/image/'+sign.properties.image[0]" *ngIf="sign.properties.image" width="100">
+    </div>
+    <div *ngIf="answerResult==false" class="col-12 alert alert-danger mt-2">неправильно</div>
+    <div *ngIf="answerResult" class="col-12  alert alert-success mt-2">правильно</div>
+    <hr>
+    <div class="col-12 mt-2">
+        <!-- перебор вариантов -->
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6  " *ngFor="let item of variants; let i = index" align="center">
+                <button class="col-12 btn mt-2" [ngClass]="(vIndex == i) ? (answerResult) ? 'btn-success' : 'btn-danger' : 'btn-info'" style="cursor:pointer" (click)="answer(item); classVariant(i)" [disabled]="disable">{{item.properties.meta.title}}</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<a class="btn btn-info mt-2" [routerLink]="'/i/signs/'+groupId">назад</a>
+<div class="row mt-4">
+    <div class="col-sm-6 col-6" align="left">
+        <a *ngIf="prevItem.properties.meta" class="btn btn-info" [routerLink]="'/i/signs/'+groupId+'/'+prevItem.entity.id">{{prevItem.properties.meta.title}}</a>
+    </div>
+    
+    <div class="col-sm-6 col-6" align="right">
+        <a *ngIf="nextItem.properties.meta" class="btn btn-info" [routerLink]="'/i/signs/'+groupId+'/'+nextItem.entity.id">{{nextItem.properties.meta.title}}</a>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-sm-12" *ngIf="item.properties.meta">
+        <div >
+            <h3 *ngIf="item.properties.meta">знак: {{item.properties.meta.title}}</h3>
+            <p >
+                <img [src]="'/uploads/e/'+itemId+'/prop/image/'+item.properties.image[0]" width="200">
+            </p>
+            <p *ngIf="item.properties.content">{{(item.properties.content.content) ? item.properties.content.content : ''}}</p>
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<a routerLink="/i/markups" class="btn btn-info mt-4" >назад</a>
+<div class="row mt-4">
+    <div class="col-sm-2" *ngFor="let item of list;let i = index">
+        <a [routerLink]="'/i/markups/'+groupId+'/'+item.entity.id">
+            <img [src]="'/uploads/e/'+item.entity.id+'/prop/image/'+item.properties.image[0]" width="50">
+        </a>
+        <div >
+            
+            <p>
+                <a [routerLink]="'/i/markups/'+groupId+'/'+item.entity.id" >{{item.properties.meta.title}}</a>
+            </p>
+        </div>
+    </div>
+</div>

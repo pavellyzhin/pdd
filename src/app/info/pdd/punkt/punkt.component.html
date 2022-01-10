@@ -1,0 +1,12 @@
+<a routerLink="/i/pdd" class="btn btn-info mt-4">назад</a>
+
+<div class="row mt-4 mb-4">
+    <div class="col-sm-12" *ngFor="let item of list;let i = index;">
+        <p class="text-info"> {{item.properties.meta.title}}</p>
+        <p>{{item.properties.content.content}}</p>
+        <div class="col-sm-12" *ngFor="let it of listChild[i];let z = index">
+            <p class="text-info">{{it.properties.meta.title}}</p>
+            <p>{{it.properties.content.content}}</p>
+        </div>
+    </div>
+</div>

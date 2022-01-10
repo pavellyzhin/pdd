@@ -1,0 +1,8 @@
+<a routerLink="/i" class="btn btn-info mt-4" >назад</a><br>
+<div class="row mt-4">
+    <div class="col-sm-12" *ngFor="let item of list">
+        <div >
+        <a [routerLink]="'/i/markups/'+item.entity.id">{{item.properties.meta.title}}</a>
+        </div>
+    </div>
+</div>
