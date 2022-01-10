@@ -34,19 +34,19 @@ export class ManageDataService {
     
   }
 
-  initMarkups(){
+  public initMarkups(){
     this.http.get('./assets/markups.json').subscribe((data:elementFullModel[])=>{
       this.dataWaitMarkups.next(data);
     });
   }
 
-  initPdd(){
+  public initPdd(){
     this.http.get('./assets/pdd.json').subscribe((data:elementFullModel[])=>{
       this.dataWaitPdd.next(data);
     });
   }
 
-  initSigns(){
+  public initSigns(){
     this.http.get('./assets/signs.json').subscribe((data:elementFullModel[]) => {
       this.dataWaitSigns.next(data);
     });

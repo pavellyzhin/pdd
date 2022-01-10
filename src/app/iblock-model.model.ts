@@ -1,78 +1,73 @@
 export class elementModel {
-    id: number;
-    hook: number;
-    type: number;
+    public  id: number;
+    public hook: number;
+    public type: number;
 }
 
 export class elementShortModel {
-    entity: elementModel = new elementModel();
-    hook: elementModel = new elementModel();
-    type: typeShortModel = new typeShortModel();
-    properties: propertyModel[];
+    public entity: elementModel = new elementModel();
+    public hook: elementModel = new elementModel();
+    public type: typeShortModel = new typeShortModel();
+    public properties: propertyModel[];
 }
 
 export class elementFullModel {
-    entity: elementModel = new elementModel();
-    hook: elementShortModel = new elementShortModel();
-    type: typeShortModel = new typeShortModel();
-    child: elementFullModel[] = [];
-    properties: any = {};
+    public entity: elementModel = new elementModel();
+    public hook: elementShortModel = new elementShortModel();
+    public type: typeShortModel = new typeShortModel();
+    public child: elementFullModel[] = [];
+    public properties: any = {};
 }
 
 export class metaModel {
-    hook: number;
-    title: string;
-    keywords: string;
-    description: string;
+    public hook: number;
+    public title: string;
+    public keywords: string;
+    public description: string;
 }
 
 export class typeShortModel {
-     entity: typeModel = new typeModel();
-     typeType: typeTypeModel[] = [];
-     typeProperty: typePropertyModel[] = [];
-     typePropertyValue: typePropertyValueModel[] = [];
+    public  entity: typeModel = new typeModel();
+    public typeType: typeTypeModel[] = [];
+    public typeProperty: typePropertyModel[] = [];
+    public typePropertyValue: typePropertyValueModel[] = [];
 }
 
 export class typeModel {
-    id: number|null;
-    title: string|null;
-    name: string|null;
-    basic: boolean
+    public id: number|null;
+    public title: string|null;
+    public name: string|null;
+    public basic: boolean
 
-    /*constructor(obj:{id:number|null,title:string|null,name:string|null,basic:boolean} = {id:null,title:null,name:null,basic:false}){
-        this.id = (obj.id) ? obj.id : null;
-        this.title = (obj.title) ? obj.title : null;
-        this.name = (obj.name) ? obj.name : null;
-        this.basic= (obj.basic)? obj.basic : false;
-    }*/
+  
 }
 
 export class typeTypeModel{
-    hook: number;
-    type: number;
+    public   hook: number;
+    public type: number;
 }
 
 export class typeTypeShortModel{
-    hook: typeModel = new typeModel();
-    type: typeModel = new typeModel();
+    public hook: typeModel = new typeModel();
+    public type: typeModel = new typeModel();
 
 }
 
 export class typePropertyModel{
-    hook: number;
-    property: number;
+    public hook: number;
+    public property: number;
 }
 
 
 export class typePropertyValueModel{
-    hook: number;
-    property: number;
-    value:number;
+    public hook: number;
+    public property: number;
+    public value:number;
 }
 export class propertyModel{
-    id: number|null;
-    title: string|null;
-    name: string|null;
+    public id: number|null;
+    public title: string|null;
+    public name: string|null;
     
 
     constructor(obj:{id:number|null,title:string|null,name:string|null} = {id:null,title:null,name:null}){
@@ -84,9 +79,9 @@ export class propertyModel{
 }
 
 export class valueModel {
-    id: number|null;
-    title: string|null;
-    name: string|null;
+    public id: number|null;
+    public title: string|null;
+    public name: string|null;
 
     constructor(obj:{id:number|null,title:string|null,name:string|null} = {id:null,title:null,name:null}){
         this.id    = (obj.id)    ? obj.id    : null ;
@@ -96,29 +91,29 @@ export class valueModel {
 }
 
 export class postRequestModel {
-    success: boolean;
-    data: any;
-    errors: {key:string,message:string}[];
+    public success: boolean;
+    public data: any;
+    public errors: {key:string,message:string}[];
 }
 
 export class postResponceModel {
-    key: string;
-    action:string;
-    data: {};
+    public key: string;
+    public action:string;
+    public data: {};
 }
 
 export class communicModel {
-    id?: number;
-    hook?: number;
-    target?: number;
-    pattern?: number;
-    type?: number;
+    public id?: number;
+    public hook?: number;
+    public target?: number;
+    public pattern?: number;
+    public type?: number;
 }
 
 export class patternCommunicModel{
-    id: number|null;
-    title: string|null;
-    name: string|null;
+    public id: number|null;
+    public title: string|null;
+    public name: string|null;
     
     constructor(obj:{id:number|null,title:string|null,name:string|null} = {id:null,title:null,name:null}){
         this.id = (obj.id) ? obj.id : null;
@@ -129,52 +124,44 @@ export class patternCommunicModel{
 }
 
 export class typeCommpatternTypeModel {
-    hook: number;
-    pattern:number;
-    type: number;
+    public hook: number;
+    public pattern:number;
+    public type: number;
     
 }
 
 export class propertyContentModel{
-    content: string;
-    hook: number;
+    public content: string;
+    public hook: number;
 }
 
 export class propertyVideoModel {
-    url: string;
-    hook: number;
-    type?:number;
+    public url: string;
+    public hook: number;
+    public type?:number;
 }
 
 export class propertyImageModel{
-    path: string;
-    hook: number;
-    file?: File;
+    public path: string;
+    public hook: number;
+    public file?: File;
 }
 
 export class propertyCoordinateModel {
-    id?:number;
-    hook:number;
-    x:number =0;
-    y:number =0;
-    z:number =0;
+    public id?:number;
+    public hook:number;
+    public x:number =0;
+    public y:number =0;
+    public z:number =0;
 }
 
 export class propertyDateModel {
-    id?:number;
-    hook: number;
-    year: number = 0;
-    month: number = 0;
-    day: number = 0;
-    hour: number = 0;
-    minute: number = 0;
-    second?: number = 0;
-}
-
-export class propertyGameObjectModel {
-    hook: number = 0;
-    live: number = 0;
-    locked: number = 0;
-    quantity: number = 0;
-    originalID: number = 0;
+    public id?:number;
+    public hook: number;
+    public year: number = 0;
+    public month: number = 0;
+    public day: number = 0;
+    public hour: number = 0;
+    public minute: number = 0;
+    public second?: number = 0;
 }
